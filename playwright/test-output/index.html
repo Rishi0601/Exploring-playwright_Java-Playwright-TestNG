@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\rishi\AppData\Local\Temp\testng-eclipse-1602026325\testng-customsuite.xml</span>
+                    <span>C:\Users\rishi\AppData\Local\Temp\testng-eclipse--1468120542\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Default_suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.rishi.pw.test.runner.TestRunner" class="method navigator-link" hash-for-method="TC01_negativeLogin">TC01_negativeLogin</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.rishi.pw.test.runner.Runner" class="method navigator-link" hash-for-method="runScenario(&quot;&quot;, &quot;Login feature for Flipkart Application&quot;)">runScenario("", "Login feature for Flipkart Application")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -121,14 +121,17 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.rishi.pw.test.runner.TestRunner</span>
+              <span class="class-name">com.rishi.pw.test.runner.Runner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TC01_negativeLogin">
-                  </a> <!-- TC01_negativeLogin -->
-                  <span class="method-name">TC01_negativeLogin</span>
+                  <a name="runScenario(&quot;&quot;, &quot;Login feature for Flipkart Application&quot;)">
+                  </a> <!-- runScenario("", "Login feature for Flipkart Application") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("","Login feature for Flipkart Application")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,7 +139,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\rishi\AppData\Local\Temp\testng-eclipse-1602026325\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\rishi\AppData\Local\Temp\testng-eclipse--1468120542\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,7 +148,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.rishi.pw.test.runner.TestRunner&quot;/&gt;
+      &lt;class name=&quot;com.rishi.pw.test.runner.Runner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -169,6 +172,14 @@
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">cucumber</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">runScenario</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_suite" class="panel">
@@ -187,14 +198,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TC01_negativeLogin')
-data.setCell(0, 2, 'com.rishi.pw.test.runner.TestRunner')
-data.setCell(0, 3, 1527);
+data.setCell(0, 1, 'runScenario')
+data.setCell(0, 2, 'com.rishi.pw.test.runner.Runner')
+data.setCell(0, 3, 12048);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -220,19 +231,19 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.rishi.pw.test.runner.TestRunner</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">launchApp</span>
+              <div class="chronological-class-name">com.rishi.pw.test.runner.Runner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@907f2b7)</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
+              </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">TC01_negativeLogin</span>
-                <span class="method-start">6681 ms</span>
+                <span class="method-name">runScenario("", "Login feature for Flipkart Application")</span>
+                <span class="method-start">659 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">cleanUpResources</span>
-                <span class="method-start">8214 ms</span>
-              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">12713 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
