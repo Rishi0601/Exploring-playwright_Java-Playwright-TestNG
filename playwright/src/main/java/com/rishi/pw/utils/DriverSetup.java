@@ -20,7 +20,7 @@ public class DriverSetup {
 	protected static Page page;
 	protected Browser browser;
 	protected BrowserContext browserContext;
-	protected String videoFilePath;
+	protected static String videoFilePath;
 
 	public void launchBrowser(String browserType) {
 		playwright = Playwright.create();
@@ -58,9 +58,9 @@ public class DriverSetup {
 		browserContext.tracing().stop(new Tracing.StopOptions().setPath(Path.of(filePath)));
 	}
 
-	public String saveVideoAs(String videoPath) {
+	public String saveVideoAs(String videoName) {
 		Path originalPath = page.video().path();
-		Path newPath = Path.of(System.getProperty("user.dir") + "/videos/" + videoPath + ".webm");
+		Path newPath = Path.of(System.getProperty("user.dir") + "/videos/" + videoName + ".webm");
 		try {
 			Files.move(originalPath, newPath, StandardCopyOption.REPLACE_EXISTING);
 		} catch (IOException e) {
