@@ -70,23 +70,42 @@ public class HelperMethods extends DriverSetup {
 		}
 	}
 
-	public void switchToNewWindow(String newTabName) {
+	public Page switchToNewWindow(Runnable action) {
 		try {
-			Page newPage = page.context().pages().stream().filter(x -> x.title().equalsIgnoreCase(newTabName))
-					.findFirst().orElse(null);
+			Page newPage = page.context().waitForPage(() -> {
+				action.run();
+			});
 			if (newPage != null) {
+				waitTillPageLoad(page, "page");
 				newPage.bringToFront();
-			} else {
-				new RuntimeException("Could not switch to new window!");
 			}
+			return newPage;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public Page switchToNewWindow(String expectedTitle) {
+		try {
+			Page newPage = page.context().pages().stream().filter(x -> getPageTitle(x).equalsIgnoreCase(expectedTitle))
+					.findFirst().orElse(null);
+			if (newPage != null) {
+				waitTillPageLoad(page, "page");
+				newPage.bringToFront();
+			}
+			return newPage;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
 	}
 
 	public void switchToOriginalWindow() {
 		try {
-			page.context().pages().get(0).bringToFront();
+			Page originalPage = page.context().pages().get(0);
+			waitTillPageLoad(originalPage, "page");
+			originalPage.bringToFront();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -104,13 +123,13 @@ public class HelperMethods extends DriverSetup {
 		}
 	}
 
-	public void waitTillPageLoad(String loadByStates) {
+	public void waitTillPageLoad(Page page, String loadByStates) {
 		try {
 			switch (loadByStates.toLowerCase()) {
 			case "dom" -> page.waitForLoadState(LoadState.DOMCONTENTLOADED);
 			case "page" -> page.waitForLoadState(LoadState.LOAD);
 			case "network" -> page.waitForLoadState(LoadState.NETWORKIDLE);
-			default -> new RuntimeException("Invalid load state!");
+			default -> page.waitForLoadState();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -185,6 +204,25 @@ public class HelperMethods extends DriverSetup {
 			page.reload();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+
+	public String getPageTitle(Page page) {
+		try {
+			waitTillPageLoad(page, "page");
+			return page.title();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public String getPageUrl() {
+		try {
+			return page.url();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
 	}
 }

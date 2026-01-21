@@ -17,7 +17,7 @@ import com.microsoft.playwright.Tracing;
 public class DriverSetup {
 
 	protected Playwright playwright;
-	protected static Page page;
+	public static Page page;
 	protected Browser browser;
 	protected BrowserContext browserContext;
 	protected static String videoFilePath;
