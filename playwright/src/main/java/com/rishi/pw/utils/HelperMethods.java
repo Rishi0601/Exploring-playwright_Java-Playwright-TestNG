@@ -1,7 +1,11 @@
 package com.rishi.pw.utils;
 
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+
+import org.testng.Assert;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Locator.WaitForOptions;
@@ -71,6 +75,7 @@ public class HelperMethods extends DriverSetup {
 	}
 
 	public Page switchToNewWindow(Runnable action) {
+		LoggerHandler.info("Switching to new window");
 		try {
 			Page newPage = page.context().waitForPage(() -> {
 				action.run();
@@ -102,6 +107,7 @@ public class HelperMethods extends DriverSetup {
 	}
 
 	public void switchToOriginalWindow() {
+		LoggerHandler.info("Switching to original window");
 		try {
 			Page originalPage = page.context().pages().get(0);
 			waitTillPageLoad(originalPage, "page");
@@ -117,6 +123,7 @@ public class HelperMethods extends DriverSetup {
 
 	public void enterText(Locator locator, String text) {
 		try {
+			LoggerHandler.info("Entering mobile number: " + text);
 			locator.fill(text);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -224,5 +231,18 @@ public class HelperMethods extends DriverSetup {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	public void exceptionHandler(Exception e) {
+		e.printStackTrace();
+		LoggerHandler.error(e.getMessage());
+		Assert.fail();
+
+	}
+
+	public static String getTimestamp(String format) {
+		Date date = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+		return simpleDateFormat.format(date);
 	}
 }

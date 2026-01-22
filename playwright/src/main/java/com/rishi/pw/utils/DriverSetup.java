@@ -16,30 +16,36 @@ import com.microsoft.playwright.Tracing;
 
 public class DriverSetup {
 
-	protected Playwright playwright;
+	protected static Playwright playwright;
 	public static Page page;
-	protected Browser browser;
+	protected static Browser browser;
 	protected BrowserContext browserContext;
 	protected static String videoFilePath;
 
-	public void launchBrowser(String browserType) {
+	public static void initGlobalResources() {
 		playwright = Playwright.create();
-		browser = selectBrowser(browserType);
+		browser = selectBrowser(PropertiesReader.getProperty().getProperty("browser"));
+	}
+
+	public void launchBrowser() {
 		browserContext = browser.newContext(new NewContextOptions().setViewportSize(null)
 				.setRecordVideoDir(Path.of(System.getProperty("user.dir") + "/videos/"))
 				.setRecordVideoSize(1920, 1080));
+		LoggerHandler.info("Launching browser");
 		page = browserContext.newPage();
 	}
 
 	public void navigateToUrl(String url) {
+		LoggerHandler.info("Opening website");
 		page.navigate(url);
 	}
 
-	public Browser selectBrowser(String browserType) {
+	public static Browser selectBrowser(String browserType) {
+		LoggerHandler.info("Scripts running on browser: " + browserType);
 		switch (browserType.toLowerCase()) {
 		case "chrome", "msedge":
 			return playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel(browserType)
-					.setHeadless(false).setArgs(List.of("--start-maximized")));
+					.setHeadless(true).setArgs(List.of("--start-maximized")));
 		case "firefox":
 			return playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
 		case "webkit":
@@ -50,17 +56,21 @@ public class DriverSetup {
 	}
 
 	public void startTracerUtils(BrowserContext browserContext) {
+		LoggerHandler.info("Started tracing test");
 		browserContext.tracing()
 				.start(new Tracing.StartOptions().setScreenshots(true).setSnapshots(true).setSources(true));
 	}
 
 	public void stopTracerUtils(BrowserContext browserContext, String filePath) {
+		LoggerHandler.info("Stopped tracing test");
 		browserContext.tracing().stop(new Tracing.StopOptions().setPath(Path.of(filePath)));
 	}
 
 	public String saveVideoAs(String videoName) {
 		Path originalPath = page.video().path();
+		LoggerHandler.info("Target video saving path: " + originalPath.toString());
 		Path newPath = Path.of(System.getProperty("user.dir") + "/videos/" + videoName + ".webm");
+		LoggerHandler.info("Target video saving path: " + newPath.toString());
 		try {
 			Files.move(originalPath, newPath, StandardCopyOption.REPLACE_EXISTING);
 		} catch (IOException e) {
@@ -73,6 +83,9 @@ public class DriverSetup {
 		page.close();
 		browserContext.close();
 		videoFilePath = saveVideoAs(videoName);
+	}
+
+	public static void destroyGlobalResources() {
 		browser.close();
 		playwright.close();
 	}

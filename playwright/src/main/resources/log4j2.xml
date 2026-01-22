@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="log_file">${sys:logfile.name}</Property>
+	</Properties>
+
+	<Appenders>
+		<RollingFile name="File"
+			fileName="${log_file}"
+			filePattern="logs/archive/app-%d{yyyy-MM-dd}.log.gz">
+			<PatternLayout
+				pattern="[%p] %d{yyyy-MM-dd HH:mm:ss} %c{1}.%M - %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	
+	<Loggers>
+		<Root level="debug">
+			<AppenderRef ref="File" />
+		</Root>
+	</Loggers>
+</Configuration>
