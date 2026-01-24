@@ -3,10 +3,10 @@
 
 # Folders
 /logs/
-/target/
 /videos/
 /reports/
 /screenshots/
+/tracer/
 
 # Log file
 *.log
@@ -30,3 +30,4 @@
 hs_err_pid*
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Java
+/target/

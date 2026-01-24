@@ -16,10 +16,10 @@ import com.microsoft.playwright.Tracing;
 
 public class DriverSetup {
 
-	protected static Playwright playwright;
+	private static Playwright playwright;
 	public static Page page;
-	protected static Browser browser;
-	protected BrowserContext browserContext;
+	private static Browser browser;
+	private static BrowserContext browserContext;
 	protected static String videoFilePath;
 
 	public static void initGlobalResources() {
@@ -28,9 +28,9 @@ public class DriverSetup {
 	}
 
 	public void launchBrowser() {
-		browserContext = browser.newContext(new NewContextOptions().setViewportSize(null)
-				.setRecordVideoDir(Path.of(System.getProperty("user.dir") + "/videos/"))
-				.setRecordVideoSize(1920, 1080));
+		browserContext = browser.newContext(new NewContextOptions().setViewportSize(null));
+//				.setRecordVideoDir(Path.of(System.getProperty("user.dir") + "/videos/"))
+//				.setRecordVideoSize(1920, 1080));
 		LoggerHandler.info("Launching browser");
 		page = browserContext.newPage();
 	}
@@ -55,13 +55,13 @@ public class DriverSetup {
 		}
 	}
 
-	public void startTracerUtils(BrowserContext browserContext) {
+	public void startTracerUtils() {
 		LoggerHandler.info("Started tracing test");
 		browserContext.tracing()
 				.start(new Tracing.StartOptions().setScreenshots(true).setSnapshots(true).setSources(true));
 	}
 
-	public void stopTracerUtils(BrowserContext browserContext, String filePath) {
+	public void stopTracerUtils(String filePath) {
 		LoggerHandler.info("Stopped tracing test");
 		browserContext.tracing().stop(new Tracing.StopOptions().setPath(Path.of(filePath)));
 	}
@@ -81,11 +81,11 @@ public class DriverSetup {
 
 	public void teardown(String videoName) {
 		page.close();
-		browserContext.close();
-		videoFilePath = saveVideoAs(videoName);
+//		videoFilePath = saveVideoAs(videoName);
 	}
 
 	public static void destroyGlobalResources() {
+		browserContext.close();
 		browser.close();
 		playwright.close();
 	}

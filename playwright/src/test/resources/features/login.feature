@@ -22,3 +22,7 @@ Feature: Login feature for Flipkart Application
   Scenario:
     When the user scrolls to the footer of the application home page
     Then the user can find "21" footer links
+
+  Scenario:
+    When the user scrolls to the product categories
+    Then the user finds the following categories "Minutes, Mobiles, TVs & Appliances, Electronics, Fashion, Home & Kitchen, Beauty & Toys, Furniture, Flight Bookings, Grocery"

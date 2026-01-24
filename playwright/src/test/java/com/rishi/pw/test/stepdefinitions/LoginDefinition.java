@@ -1,14 +1,25 @@
 package com.rishi.pw.test.stepdefinitions;
 
 import com.microsoft.playwright.Page;
-import com.rishi.pw.test.utils.Context;
+import com.rishi.pw.pages.Homepage;
+import com.rishi.pw.pages.Loginpage;
+import com.rishi.pw.test.utils.TestValidation;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LoginDefinition extends Context {
+public class LoginDefinition {
 
 	private static Page page;
+	private Homepage homepage;
+	private Loginpage loginpage;
+	private TestValidation testValidation;
+
+	public LoginDefinition() {
+		homepage = new Homepage();
+		loginpage = new Loginpage();
+		testValidation = new TestValidation();
+	}
 
 	@When("user click on the Login button")
 	public void user_click_on_the_login_button() {

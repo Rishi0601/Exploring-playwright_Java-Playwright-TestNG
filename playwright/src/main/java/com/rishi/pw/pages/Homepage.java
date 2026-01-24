@@ -21,4 +21,15 @@ public class Homepage {
 		LoggerHandler.info("Scrolling to footer links");
 		helperMethods.scrollToElement(homepageLocators.footerLinks.nth(0));
 	}
+
+	public void goToScialLinksAtFooter() {
+		LoggerHandler.info("Navigate to social links at footer");
+		helperMethods.scrollToElement(homepageLocators.socialLinks);
+		helperMethods.getTextFromListOfElements(homepageLocators.socialLinks);
+	}
+	
+	public void goToHomepageCategories() {
+		LoggerHandler.info("Navigate t Home page product Categries");
+		helperMethods.scrollToElement(homepageLocators.homepageCategories.nth(0));
+	}
 }

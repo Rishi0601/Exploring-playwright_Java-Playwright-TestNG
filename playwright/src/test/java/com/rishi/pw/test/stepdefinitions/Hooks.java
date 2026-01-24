@@ -1,11 +1,13 @@
 package com.rishi.pw.test.stepdefinitions;
 
 import com.rishi.pw.utils.DriverSetup;
+import com.rishi.pw.utils.PropertiesReader;
 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
+import io.cucumber.java.en.Given;
 
 public class Hooks extends DriverSetup {
 
@@ -17,12 +19,17 @@ public class Hooks extends DriverSetup {
 	@Before
 	public void launchApp() {
 		launchBrowser();
-		startTracerUtils(browserContext);
+		startTracerUtils();
+	}
+
+	@Given("the user initialises test dependencies and launches the Flipkart application")
+	public void the_user_initialises_test_dependencies_and_launches_the_flipkart_application() {
+		navigateToUrl(PropertiesReader.getProperty().getProperty("url"));
 	}
 
 	@After
 	public void cleanUpResources() {
-		stopTracerUtils(browserContext, System.getProperty("user.dir") + "/tracer/tracer.zip");
+		stopTracerUtils(System.getProperty("user.dir") + "/tracer/tracer.zip");
 		teardown("test-vid");
 	}
 
