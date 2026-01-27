@@ -1,6 +1,7 @@
 package com.rishi.pw.utils;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -10,7 +11,6 @@ import org.testng.Assert;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Locator.WaitForOptions;
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.SelectOption;
 import com.microsoft.playwright.options.WaitForSelectorState;
@@ -245,5 +245,18 @@ public class HelperMethods extends DriverSetup {
 		Date date = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
 		return simpleDateFormat.format(date);
+	}
+
+	public List<String> getAttributesFromListOfElements(Locator locator, String attribute) {
+		try {
+			List<String> extractedList = new ArrayList<String>();
+			for (int i = 0; i < locator.count(); i++) {
+				extractedList.add(getAttribute(locator.nth(i), attribute));
+			}
+			return extractedList;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Collections.emptyList();
+		}
 	}
 }

@@ -1,14 +1,14 @@
 package com.rishi.pw.test.utils;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.testng.Assert;
 
-import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.rishi.pw.ui.HomepageLocators;
 import com.rishi.pw.ui.LoginpageLocators;
+import com.rishi.pw.ui.ProductResultspageLocators;
 import com.rishi.pw.utils.DriverSetup;
 import com.rishi.pw.utils.HelperMethods;
 
@@ -16,6 +16,7 @@ public class TestValidation extends DriverSetup {
 
 	HomepageLocators homepageLocators = new HomepageLocators();
 	LoginpageLocators loginpageLocators = new LoginpageLocators();
+	ProductResultspageLocators productResultspageLocators = new ProductResultspageLocators();
 	HelperMethods helperMethods = new HelperMethods();
 
 	public void validateErrorMessage(String expectedMessage) {
@@ -39,21 +40,29 @@ public class TestValidation extends DriverSetup {
 		Assert.assertEquals(pageUrl, url);
 	}
 
-	public void validateListOfElements(Locator locator, String attribute, List<String> list) {
-		List<String> extractedList = new ArrayList<String>();
-		for (int i = 0; i < locator.count(); i++) {
-			extractedList.add(helperMethods.getAttribute(locator.nth(i), attribute));
-		}
-		for (int i = 0; i < extractedList.size(); i++) {
-			Assert.assertTrue(extractedList.get(i).toLowerCase().contains(list.get(i).toLowerCase()));
-		}
-	}
-
 	public void validateSocialLink(List<String> list) {
-		validateListOfElements(homepageLocators.socialLinks, "href", list);
+		List<String> localList = helperMethods.getAttributesFromListOfElements(homepageLocators.socialLinks, "href");
+		for (int i = 0; i < localList.size(); i++) {
+			Assert.assertTrue(localList.get(i).toLowerCase().contains(list.get(i).toLowerCase()));
+		}
 	}
 
 	public void validateHomepageProductCategories(List<String> list) {
-		validateListOfElements(homepageLocators.homepageCategories, "aria-label", list);
+		List<String> localList = helperMethods.getAttributesFromListOfElements(homepageLocators.homepageCategories,
+				"aria-label");
+		for (int i = 0; i < localList.size(); i++) {
+			Assert.assertTrue(localList.get(i).trim().equalsIgnoreCase(list.get(i).trim()));
+		}
+	}
+
+	public void validateSellerSectionUrl(String url) {
+		String currentUrl = helperMethods.getPageUrl();
+		Assert.assertTrue(currentUrl.toLowerCase().contains(url.toLowerCase()));
+	}
+
+	public void validateResultsAfterSearch(HashMap<String, String> map, int price) {
+		for (String str : map.keySet()) {
+			Assert.assertTrue(Integer.parseInt(str) <= price);
+		}
 	}
 }

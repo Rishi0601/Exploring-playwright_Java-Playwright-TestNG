@@ -17,10 +17,10 @@ import com.microsoft.playwright.Tracing;
 public class DriverSetup {
 
 	private static Playwright playwright;
-	public static Page page;
 	private static Browser browser;
 	private static BrowserContext browserContext;
-	protected static String videoFilePath;
+	
+	public static Page page;
 
 	public static void initGlobalResources() {
 		playwright = Playwright.create();
@@ -45,7 +45,7 @@ public class DriverSetup {
 		switch (browserType.toLowerCase()) {
 		case "chrome", "msedge":
 			return playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel(browserType)
-					.setHeadless(true).setArgs(List.of("--start-maximized")));
+					.setHeadless(false).setArgs(List.of("--start-maximized")));
 		case "firefox":
 			return playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
 		case "webkit":
