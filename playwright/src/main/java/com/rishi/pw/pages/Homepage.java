@@ -13,6 +13,11 @@ public class Homepage {
 	public void loginToFlipkart() {
 		LoggerHandler.info("Login button visible");
 		helperMethods.waitForElementToBeVisible(homepageLocators.loginBtn);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		helperMethods.clickOnElement(homepageLocators.loginBtn);
 	}
 

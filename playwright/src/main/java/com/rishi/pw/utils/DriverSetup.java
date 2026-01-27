@@ -81,11 +81,11 @@ public class DriverSetup {
 
 	public void teardown(String videoName) {
 		page.close();
+		browserContext.close();
 //		videoFilePath = saveVideoAs(videoName);
 	}
 
 	public static void destroyGlobalResources() {
-		browserContext.close();
 		browser.close();
 		playwright.close();
 	}
