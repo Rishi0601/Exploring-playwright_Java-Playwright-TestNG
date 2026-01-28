@@ -16,14 +16,12 @@ public class ProductResultspage {
 		List<String> listProductPrice = helperMethods
 				.getTextFromListOfElements(productResultspageLocators.productPrice);
 		List<String> listProductName = helperMethods.getTextFromListOfElements(productResultspageLocators.productName);
-
-		for (int i = 0; i < listProductPrice.size(); i++) {
+		for (int i = 0; i < listProductName.size(); i++) {
 			String refactoredPriceString = listProductPrice.get(i).replaceAll("[^0-9]", "");
 			if (Integer.parseInt(refactoredPriceString) <= price) {
 				map.put(refactoredPriceString, listProductName.get(i));
 			}
 		}
-		System.out.println(map);
 		return map;
 	}
 }

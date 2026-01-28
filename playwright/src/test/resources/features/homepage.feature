@@ -1,4 +1,4 @@
-Feature: Login feature for Flipkart Application
+Feature: Homepage features for Flipkart Application
 
   Background:
     Given the user initialises test dependencies and launches the Flipkart application
