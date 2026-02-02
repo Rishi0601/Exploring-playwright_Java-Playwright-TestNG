@@ -53,8 +53,16 @@ public class HelperMethods extends DriverSetup {
 
 	public void waitForElementToBeVisible(Locator locator) {
 		try {
-			locator.waitFor(new WaitForOptions().setState(WaitForSelectorState.VISIBLE));
-			Thread.sleep(1000);
+			page.waitForCondition(() -> locator.isVisible());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void waitForResponse(String url, Locator locator) {
+		try {
+			page.waitForResponse(response -> response.url().contains(url) && response.status() == 200,
+					() -> clickOnElement(locator));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

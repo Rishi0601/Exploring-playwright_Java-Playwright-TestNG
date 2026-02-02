@@ -33,26 +33,6 @@ public class HomeDefinition {
 		testValidation.validateSocialLink(List.of(string.split(", ")));
 	}
 
-	@When("the user scrolls to the product categories")
-	public void the_user_scrolls_to_the_product_categories() {
-		homepage.goToHomepageCategories();
-	}
-
-	@Then("the user finds the following categories {string}")
-	public void the_user_finds_the_following_categories(String string) {
-		testValidation.validateHomepageProductCategories(List.of(string.split("\\|")));
-	}
-
-	@When("the user clicks on the Seller button")
-	public void the_user_clicks_on_the_seller_button() {
-		homepage.goToSellerSection();
-	}
-
-	@Then("the user is redirected to a website where the hyperlink contains {string} keyword")
-	public void the_user_is_redirected_to_a_website_where_the_hyperlink_contains_keyword(String string) {
-		testValidation.validateSellerSectionUrl(string);
-	}
-
 	@When("the user searches {string} in the search box and hits the search button")
 	public void the_user_searches_in_the_search_box_and_hits_the_search_button(String string) {
 		homepage.searchProducts(string);

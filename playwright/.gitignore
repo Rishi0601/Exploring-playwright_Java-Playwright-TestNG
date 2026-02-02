@@ -2,11 +2,11 @@
 *.class
 
 # Folders
-/logs/
-/videos/
-/reports/
-/screenshots/
-/tracer/
+playwright/logs
+playwright/videos
+playwright/reports
+playwright/screenshots
+playwright/tracer
 
 # Log file
 *.log

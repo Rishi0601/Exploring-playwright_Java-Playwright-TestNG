@@ -47,14 +47,6 @@ public class TestValidation extends DriverSetup {
 		}
 	}
 
-	public void validateHomepageProductCategories(List<String> list) {
-		List<String> localList = helperMethods.getAttributesFromListOfElements(homepageLocators.homepageCategories,
-				"aria-label");
-		for (int i = 0; i < localList.size(); i++) {
-			Assert.assertTrue(localList.get(i).trim().equalsIgnoreCase(list.get(i).trim()));
-		}
-	}
-
 	public void validateSellerSectionUrl(String url) {
 		String currentUrl = helperMethods.getPageUrl();
 		Assert.assertTrue(currentUrl.toLowerCase().contains(url.toLowerCase()));
