@@ -30,4 +30,5 @@ playwright/tracer
 hs_err_pid*
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Java
+/test-output/
 /target/

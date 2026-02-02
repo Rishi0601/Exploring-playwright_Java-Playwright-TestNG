@@ -59,7 +59,7 @@ public class HelperMethods extends DriverSetup {
 		}
 	}
 
-	public void waitForResponse(String url, Locator locator) {
+	public void waitForResponseAfterClick(String url, Locator locator) {
 		try {
 			page.waitForResponse(response -> response.url().contains(url) && response.status() == 200,
 					() -> clickOnElement(locator));
