@@ -2,6 +2,7 @@ package com.rishi.pw.test.runner;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 
 import com.rishi.pw.utils.ExtentReportManager;
 
@@ -20,5 +21,11 @@ public class Runner extends AbstractTestNGCucumberTests {
 	@AfterClass
 	public void flushReport() {
 		ExtentReportManager.flushReport();
+	}
+
+	@Override
+	@DataProvider(parallel = true)
+	public Object[][] scenarios() {
+		return super.scenarios();
 	}
 }

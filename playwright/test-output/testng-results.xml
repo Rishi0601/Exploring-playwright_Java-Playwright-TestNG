@@ -1,47 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="0" failed="8" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-02T23:01:29 IST" name="Default suite" finished-at="2026-02-02T23:03:05 IST" duration-ms="95804">
+  <suite started-at="2026-02-08T22:07:06 IST" name="Suite" finished-at="2026-02-08T22:07:25 IST" duration-ms="19759">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-02-02T23:01:29 IST" name="Default test" finished-at="2026-02-02T23:03:05 IST" duration-ms="95804">
+    <test started-at="2026-02-08T22:07:06 IST" name="Test1" finished-at="2026-02-08T22:07:25 IST" duration-ms="19759">
       <class name="com.rishi.pw.test.runner.Runner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:01:29 IST" name="setUpClass" finished-at="2026-02-02T23:01:40 IST" duration-ms="11041" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:06 IST" name="setUpClass" finished-at="2026-02-08T22:07:24 IST" duration-ms="18340" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7e7fe6d]]>
+                <![CDATA[org.testng.TestRunner@45b4c3a9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="initReport()[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:01:40 IST" name="initReport" finished-at="2026-02-02T23:01:40 IST" duration-ms="23" status="PASS">
+        <test-method is-config="true" signature="initReport()[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:24 IST" name="initReport" finished-at="2026-02-08T22:07:24 IST" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initReport -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:01:40 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-02T23:01:47 IST" duration-ms="7238" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Footer link validation"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Homepage features for Flipkart Application"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:01:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-02T23:01:52 IST" duration-ms="5115" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-08T22:07:25 IST" duration-ms="504" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -54,10 +38,62 @@
               </value>
             </param>
           </params>
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Cannot find object to call __adopt__: browser-context@8ffe29615d9ae4c481a7d54932a834a9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: browser-context@8ffe29615d9ae4c481a7d54932a834a9
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
+at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
+at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:01:52 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-02T23:02:07 IST" duration-ms="14306" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-08T22:07:25 IST" duration-ms="503" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login page hyperlink redirection validation"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login page features for Flipkart Application"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Cannot find object to call __adopt__: browser-context@8ffe29615d9ae4c481a7d54932a834a9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: browser-context@8ffe29615d9ae4c481a7d54932a834a9
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
+at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
+at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-08T22:07:25 IST" duration-ms="503" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -70,10 +106,28 @@
               </value>
             </param>
           </params>
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Cannot find object to call __adopt__: request-context@7e4c784766c97e81f7ba657b132ae7e4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: request-context@7e4c784766c97e81f7ba657b132ae7e4
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
+at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
+at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:02:07 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-02T23:02:19 IST" duration-ms="12635" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-08T22:07:25 IST" duration-ms="503" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -86,10 +140,97 @@
               </value>
             </param>
           </params>
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Cannot find object to call __adopt__: browser-context@42bd332aa71d31985c10cb10a1a7b19e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: browser-context@42bd332aa71d31985c10cb10a1a7b19e
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
+at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
+at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:02:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-02T23:02:29 IST" duration-ms="9863" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-08T22:07:25 IST" duration-ms="503" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Footer link validation"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Homepage features for Flipkart Application"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Cannot find object to call __adopt__: request-context@64edd57e088bccc2fe78f1190aec6260]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: request-context@64edd57e088bccc2fe78f1190aec6260
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
+at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
+at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-08T22:07:25 IST" duration-ms="502" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login page hyperlink redirection validation"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login page features for Flipkart Application"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Cannot find command to respond: 4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Cannot find command to respond: 4
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:246)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:114)
+at com.microsoft.playwright.impl.BrowserContextImpl.newPage(BrowserContextImpl.java:433)
+at com.microsoft.playwright.impl.BrowserContextImpl.newPage(BrowserContextImpl.java:43)
+at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:35)
+at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-08T22:07:25 IST" duration-ms="502" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -102,10 +243,28 @@
               </value>
             </param>
           </params>
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Cannot find object to call __adopt__: request-context@ad94b5097fc705fa2b8b9319830f7648]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: request-context@ad94b5097fc705fa2b8b9319830f7648
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
+at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
+at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:02:29 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-02T23:02:40 IST" duration-ms="10529" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-08T22:07:25 IST" duration-ms="501" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -118,50 +277,57 @@
               </value>
             </param>
           </params>
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Object doesn't exist: browser-context@8ffe29615d9ae4c481a7d54932a834a9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Object doesn't exist: browser-context@8ffe29615d9ae4c481a7d54932a834a9
+at com.microsoft.playwright.impl.Connection.getExistingObject(Connection.java:195)
+at com.microsoft.playwright.impl.BrowserImpl.handleEvent(BrowserImpl.java:242)
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:295)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
+at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
+at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
+at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:02:40 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-02T23:02:48 IST" duration-ms="8363" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Login page hyperlink redirection validation"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Login page features for Flipkart Application"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:02:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-02T23:02:56 IST" duration-ms="7868" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Login page hyperlink redirection validation"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Login page features for Flipkart Application"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="flushReport()[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:02:56 IST" name="flushReport" finished-at="2026-02-02T23:02:57 IST" duration-ms="442" status="PASS">
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:25 IST" name="flushReport" finished-at="2026-02-08T22:07:25 IST" duration-ms="553" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReport -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-02T23:02:57 IST" name="tearDownClass" finished-at="2026-02-02T23:03:05 IST" duration-ms="8259" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.rishi.pw.test.runner.Runner@692f203f]" started-at="2026-02-08T22:07:25 IST" name="tearDownClass" finished-at="2026-02-08T22:07:25 IST" duration-ms="209" status="FAIL">
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Cannot find command to respond: 3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Cannot find command to respond: 3
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:246)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:114)
+at com.microsoft.playwright.impl.BrowserImpl.close(BrowserImpl.java:82)
+at com.microsoft.playwright.Browser.close(Browser.java:1284)
+at com.rishi.pw.utils.DriverSetup.destroyGlobalResources(DriverSetup.java:89)
+at com.rishi.pw.test.stepdefinitions.Hooks.destoryResources(Hooks.java:53)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- com.rishi.pw.test.runner.Runner -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Suite -->
 </testng-results>
