@@ -9,7 +9,15 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class ExtentReportManager extends DriverSetup {
 
 	public static ExtentReports extentReports;
-	public static ExtentTest test;
+	private static final ThreadLocal<ExtentTest> testThreadlocal = ThreadLocal.withInitial(() -> null);
+
+	public static void setTest(ExtentTest test) {
+		testThreadlocal.set(test);
+	}
+
+	public static ExtentTest getTest() {
+		return testThreadlocal.get();
+	}
 
 	public static ExtentReports initReport() {
 		ExtentSparkReporter extentSparkReporter = new ExtentSparkReporter(
@@ -21,16 +29,16 @@ public class ExtentReportManager extends DriverSetup {
 	}
 
 	public static void createTest(String testName) {
-		test = extentReports.createTest(testName);
+		setTest(extentReports.createTest(testName));
 	}
 
 	public static void passLogWithSS(String description, String ssName) {
-		test.log(Status.PASS, description, MediaEntityBuilder
+		getTest().log(Status.PASS, description, MediaEntityBuilder
 				.createScreenCaptureFromPath(ScreenshotUtil.getScreenshotPath(ssName).toString()).build());
 	}
 
 	public static void failLogWithSS(String description, String ssName) {
-		test.log(Status.FAIL, description, MediaEntityBuilder
+		getTest().log(Status.FAIL, description, MediaEntityBuilder
 				.createScreenCaptureFromPath(ScreenshotUtil.getScreenshotPath(ssName).toString()).build());
 	}
 

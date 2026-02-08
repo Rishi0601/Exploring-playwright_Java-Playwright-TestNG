@@ -16,7 +16,7 @@ public class ScreenshotUtil extends DriverSetup {
 
 	public static byte[] takeScreenShots(String imgName) {
 		Path screenshotPath = getScreenshotPath(imgName);
-		byte[] array = page.screenshot(new Page.ScreenshotOptions().setFullPage(false).setPath(screenshotPath));
+		byte[] array = getPage().screenshot(new Page.ScreenshotOptions().setFullPage(false).setPath(screenshotPath));
 		try {
 			Files.write(Paths.get(screenshotPath.toUri()), array);
 		} catch (IOException e) {

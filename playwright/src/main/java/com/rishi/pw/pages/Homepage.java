@@ -12,13 +12,13 @@ public class Homepage {
 
 	public void loginToFlipkart() {
 		LoggerHandler.info("Login button visible");
-		helperMethods.waitTillPageLoad(DriverSetup.page, "");
+		helperMethods.waitTillPageLoad(DriverSetup.getPage(), "");
 		helperMethods.clickOnElement(homepageLocators.loginBtnImg);
 	}
 
 	public void goToFooter() {
 		LoggerHandler.info("Login button visible");
-		helperMethods.waitTillPageLoad(DriverSetup.page, "");
+		helperMethods.waitTillPageLoad(DriverSetup.getPage(), "");
 		helperMethods.waitForElementToBeVisible(homepageLocators.searchBar);
 		LoggerHandler.info("Scrolling to footer links");
 		helperMethods.scrollToElement(homepageLocators.footerLinks.nth(0));
@@ -32,17 +32,17 @@ public class Homepage {
 
 	public void goToSellerSection() {
 		LoggerHandler.info("Navigate to Seller section");
-		helperMethods.waitTillPageLoad(DriverSetup.page, "");
+		helperMethods.waitTillPageLoad(DriverSetup.getPage(), "");
 		helperMethods.clickOnElement(homepageLocators.sellerSection);
-		helperMethods.waitTillPageLoad(DriverSetup.page, "");
+		helperMethods.waitTillPageLoad(DriverSetup.getPage(), "");
 	}
 
 	public void searchProducts(String product) {
 		LoggerHandler.info("Searching product: " + product);
-		helperMethods.waitTillPageLoad(DriverSetup.page, "");
+		helperMethods.waitTillPageLoad(DriverSetup.getPage(), "");
 		helperMethods.clickOnElement(homepageLocators.searchBar);
 		helperMethods.enterText(homepageLocators.searchBar, product);
 		helperMethods.keyboardAction(homepageLocators.searchBar, "Enter");
-		helperMethods.waitTillPageLoad(DriverSetup.page, "page");
+		helperMethods.waitTillPageLoad(DriverSetup.getPage(), "page");
 	}
 }

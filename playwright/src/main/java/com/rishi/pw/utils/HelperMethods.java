@@ -53,7 +53,7 @@ public class HelperMethods extends DriverSetup {
 
 	public void waitForElementToBeVisible(Locator locator) {
 		try {
-			page.waitForCondition(() -> locator.isVisible());
+			getPage().waitForCondition(() -> locator.isVisible());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -61,7 +61,7 @@ public class HelperMethods extends DriverSetup {
 
 	public void waitForResponseAfterClick(String url, Locator locator) {
 		try {
-			page.waitForResponse(response -> response.url().contains(url) && response.status() == 200,
+			getPage().waitForResponse(response -> response.url().contains(url) && response.status() == 200,
 					() -> clickOnElement(locator));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -87,11 +87,11 @@ public class HelperMethods extends DriverSetup {
 	public Page switchToNewWindow(Runnable action) {
 		LoggerHandler.info("Switching to new window");
 		try {
-			Page newPage = page.context().waitForPage(() -> {
+			Page newPage = getPage().context().waitForPage(() -> {
 				action.run();
 			});
 			if (newPage != null) {
-				waitTillPageLoad(page, "page");
+				waitTillPageLoad(getPage(), "getPage()");
 				newPage.bringToFront();
 			}
 			return newPage;
@@ -103,10 +103,10 @@ public class HelperMethods extends DriverSetup {
 
 	public Page switchToNewWindow(String expectedTitle) {
 		try {
-			Page newPage = page.context().pages().stream().filter(x -> getPageTitle(x).equalsIgnoreCase(expectedTitle))
-					.findFirst().orElse(null);
+			Page newPage = getPage().context().pages().stream()
+					.filter(x -> getPageTitle(x).equalsIgnoreCase(expectedTitle)).findFirst().orElse(null);
 			if (newPage != null) {
-				waitTillPageLoad(page, "page");
+				waitTillPageLoad(getPage(), "getPage()");
 				newPage.bringToFront();
 			}
 			return newPage;
@@ -119,8 +119,8 @@ public class HelperMethods extends DriverSetup {
 	public void switchToOriginalWindow() {
 		LoggerHandler.info("Switching to original window");
 		try {
-			Page originalPage = page.context().pages().get(0);
-			waitTillPageLoad(originalPage, "page");
+			Page originalPage = getPage().context().pages().get(0);
+			waitTillPageLoad(originalPage, "getPage()");
 			originalPage.bringToFront();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -128,7 +128,7 @@ public class HelperMethods extends DriverSetup {
 	}
 
 	public void debugScript() {
-		page.pause();
+		getPage().pause();
 	}
 
 	public void enterText(Locator locator, String text) {
@@ -143,10 +143,10 @@ public class HelperMethods extends DriverSetup {
 	public void waitTillPageLoad(Page page, String loadByStates) {
 		try {
 			switch (loadByStates.toLowerCase()) {
-			case "dom" -> page.waitForLoadState(LoadState.DOMCONTENTLOADED);
-			case "page" -> page.waitForLoadState(LoadState.LOAD);
-			case "network" -> page.waitForLoadState(LoadState.NETWORKIDLE);
-			default -> page.waitForLoadState();
+			case "dom" -> getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+			case "getPage()" -> getPage().waitForLoadState(LoadState.LOAD);
+			case "network" -> getPage().waitForLoadState(LoadState.NETWORKIDLE);
+			default -> getPage().waitForLoadState();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -218,7 +218,7 @@ public class HelperMethods extends DriverSetup {
 
 	public void refreshPage() {
 		try {
-			page.reload();
+			getPage().reload();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -227,7 +227,7 @@ public class HelperMethods extends DriverSetup {
 	public String getPageTitle(Page page) {
 		try {
 			waitTillPageLoad(page, "page");
-			return page.title();
+			return getPage().title();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -236,7 +236,7 @@ public class HelperMethods extends DriverSetup {
 
 	public String getPageUrl() {
 		try {
-			return page.url();
+			return getPage().url();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

@@ -1,7 +1,7 @@
 package com.rishi.pw.test.runner;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 
 import com.rishi.pw.utils.ExtentReportManager;
@@ -13,12 +13,12 @@ import io.cucumber.testng.CucumberOptions;
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, dryRun = false)
 public class Runner extends AbstractTestNGCucumberTests {
 
-	@BeforeClass
+	@BeforeSuite
 	public void initReport() {
 		ExtentReportManager.initReport();
 	}
 
-	@AfterClass
+	@AfterSuite
 	public void flushReport() {
 		ExtentReportManager.flushReport();
 	}

@@ -13,7 +13,7 @@ public class Loginpage {
 	public void loginByMobileNumber(String mobileNumber) {
 		helperMethods.waitForElementToBeVisible(loginpageLocators.mobileNumber);
 		helperMethods.clickOnElement(loginpageLocators.mobileNumber);
-		helperMethods.waitTillPageLoad(DriverSetup.page, "page");
+		helperMethods.waitTillPageLoad(DriverSetup.getPage(), "page");
 		helperMethods.enterText(loginpageLocators.mobileNumber, mobileNumber);
 		helperMethods.clickOnElement(loginpageLocators.continueBtn);
 	}

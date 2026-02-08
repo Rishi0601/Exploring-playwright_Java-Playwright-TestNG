@@ -6,8 +6,10 @@
       <class name="com.rishi.pw.test.runner.Runner">
         <methods>
           <include name="setUpClass"/>
+          <include name="initReport"/>
+          <include name="runScenario" invocation-numbers="6 7"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="6"/>
+          <include name="flushReport"/>
         </methods>
       </class> <!-- com.rishi.pw.test.runner.Runner -->
     </classes>

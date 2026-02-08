@@ -5,6 +5,6 @@ import com.rishi.pw.utils.DriverSetup;
 
 public class ProductResultspageLocators extends DriverSetup {
 
-	public Locator productPrice = page.locator("[class*='hZ3P6w']");
-	public Locator productName = page.locator("[class='RG5Slk']");
+	public Locator productPrice = getPage().locator("[class*='hZ3P6w']");
+	public Locator productName = getPage().locator("[class='RG5Slk']");
 }

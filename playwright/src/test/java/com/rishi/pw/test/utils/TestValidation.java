@@ -35,7 +35,7 @@ public class TestValidation extends DriverSetup {
 	}
 
 	public void validateFlipkartPlusPage(String url) {
-		helperMethods.waitTillPageLoad(page, "page");
+		helperMethods.waitTillPageLoad(getPage(), "page");
 		String pageUrl = helperMethods.getPageUrl();
 		Assert.assertEquals(pageUrl, url);
 	}

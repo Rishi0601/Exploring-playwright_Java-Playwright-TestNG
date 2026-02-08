@@ -8,113 +8,34 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test1</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">8</td><td class="num">19,759</td><td></td><td></td></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">51,009</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test1 &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.rishi.pw.test.runner.Runner</td><td><a href="#m0">tearDownClass</a></td><td rowspan="1">1770568645598</td><td rowspan="1">209</td></tr><tr><th colspan="4">Test1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="8">com.rishi.pw.test.runner.Runner</td><td><a href="#m1">runScenario</a></td><td rowspan="8">1770568644522</td><td rowspan="8">503</td></tr><tr class="failedeven"><td><a href="#m2">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m3">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m4">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m5">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m6">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m7">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m8">runScenario</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.rishi.pw.test.runner.Runner</td><td><a href="#m0">runScenario</a></td><td rowspan="2">1770573092525</td><td rowspan="2">44403</td></tr><tr class="failedeven"><td><a href="#m1">runScenario</a></td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">com.rishi.pw.test.runner.Runner</td><td><a href="#m2">runScenario</a></td><td rowspan="6">1770573092524</td><td rowspan="6">50319</td></tr><tr class="passedeven"><td><a href="#m3">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m4">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m5">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m6">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m7">runScenario</a></td></tr></tbody>
 </table>
-<h2>Test1</h2><h3 id="m0">com.rishi.pw.test.runner.Runner#tearDownClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">com.microsoft.playwright.PlaywrightException: Cannot find command to respond: 3
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:246)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:114)
-	at com.microsoft.playwright.impl.BrowserImpl.close(BrowserImpl.java:82)
-	at com.microsoft.playwright.Browser.close(Browser.java:1284)
-	at com.rishi.pw.utils.DriverSetup.destroyGlobalResources(DriverSetup.java:89)
-	at com.rishi.pw.test.stepdefinitions.Hooks.destoryResources(Hooks.java:53)
+<h2>Default test</h2><h3 id="m0">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Login page hyperlink redirection validation&quot;</td><td>&quot;Login page features for Flipkart Application&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at com.rishi.pw.test.utils.TestValidation.validateLoginHyperlinks(TestValidation.java:29)
+	at com.rishi.pw.test.stepdefinitions.LoginDefinition.user_finds_the_page_title_contains(LoginDefinition.java:50)
+	at ✽.user finds the page title contains &quot;privacy&quot;(file:///C:/Users/rishi/eclipse-workspace/Exploring-playwright_Java-Playwright-TestNG/playwright/src/test/resources/features/loginpage.feature:15)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Login page hyperlink redirection validation&quot;</td><td>&quot;Login page features for Flipkart Application&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: browser-context@8ffe29615d9ae4c481a7d54932a834a9
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
-	at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
-	at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
+<h3 id="m1">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Login page hyperlink redirection validation&quot;</td><td>&quot;Login page features for Flipkart Application&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at com.rishi.pw.test.utils.TestValidation.validateLoginHyperlinks(TestValidation.java:29)
+	at com.rishi.pw.test.stepdefinitions.LoginDefinition.user_finds_the_page_title_contains(LoginDefinition.java:50)
+	at ✽.user finds the page title contains &quot;terms&quot;(file:///C:/Users/rishi/eclipse-workspace/Exploring-playwright_Java-Playwright-TestNG/playwright/src/test/resources/features/loginpage.feature:15)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Login page hyperlink redirection validation&quot;</td><td>&quot;Login page features for Flipkart Application&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">com.microsoft.playwright.PlaywrightException: Cannot find command to respond: 4
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:246)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:114)
-	at com.microsoft.playwright.impl.BrowserContextImpl.newPage(BrowserContextImpl.java:433)
-	at com.microsoft.playwright.impl.BrowserContextImpl.newPage(BrowserContextImpl.java:43)
-	at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:35)
-	at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Social hyperlinks validation&quot;</td><td>&quot;Homepage features for Flipkart Application&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: browser-context@8ffe29615d9ae4c481a7d54932a834a9
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
-	at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
-	at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search functionality validation&quot;</td><td>&quot;Homepage features for Flipkart Application&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: request-context@7e4c784766c97e81f7ba657b132ae7e4
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
-	at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
-	at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search functionality validation&quot;</td><td>&quot;Homepage features for Flipkart Application&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: browser-context@42bd332aa71d31985c10cb10a1a7b19e
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
-	at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
-	at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Footer link validation&quot;</td><td>&quot;Homepage features for Flipkart Application&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: request-context@64edd57e088bccc2fe78f1190aec6260
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
-	at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
-	at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search functionality validation&quot;</td><td>&quot;Homepage features for Flipkart Application&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">com.microsoft.playwright.PlaywrightException: Cannot find object to call __adopt__: request-context@ad94b5097fc705fa2b8b9319830f7648
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:279)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
-	at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
-	at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Invalid login validation&quot;</td><td>&quot;Login page features for Flipkart Application&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">com.microsoft.playwright.PlaywrightException: Object doesn&apos;t exist: browser-context@8ffe29615d9ae4c481a7d54932a834a9
-	at com.microsoft.playwright.impl.Connection.getExistingObject(Connection.java:195)
-	at com.microsoft.playwright.impl.BrowserImpl.handleEvent(BrowserImpl.java:242)
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:295)
-	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
-	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
-	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
-	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:174)
-	at com.microsoft.playwright.impl.BrowserImpl.newContext(BrowserImpl.java:34)
-	at com.rishi.pw.utils.DriverSetup.launchBrowser(DriverSetup.java:31)
-	at com.rishi.pw.test.stepdefinitions.Hooks.launchApp(Hooks.java:25)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search functionality validation&quot;</td><td>&quot;Homepage features for Flipkart Application&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Footer link validation&quot;</td><td>&quot;Homepage features for Flipkart Application&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search functionality validation&quot;</td><td>&quot;Homepage features for Flipkart Application&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Social hyperlinks validation&quot;</td><td>&quot;Homepage features for Flipkart Application&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Invalid login validation&quot;</td><td>&quot;Login page features for Flipkart Application&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.rishi.pw.test.runner.Runner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Search functionality validation&quot;</td><td>&quot;Homepage features for Flipkart Application&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
