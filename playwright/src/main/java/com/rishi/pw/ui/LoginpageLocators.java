@@ -1,9 +1,9 @@
 package com.rishi.pw.ui;
 
 import com.microsoft.playwright.Locator;
-import com.rishi.pw.utils.DriverSetup;
+import com.rishi.pw.utils.AppContext;
 
-public final class LoginpageLocators extends DriverSetup {
+public final class LoginpageLocators extends AppContext {
 
 	public final Locator signUpMsg1 = getPage().locator(".iq0fCx");
 	public final Locator signUpMsg2 = getPage().locator(".rda_OW");

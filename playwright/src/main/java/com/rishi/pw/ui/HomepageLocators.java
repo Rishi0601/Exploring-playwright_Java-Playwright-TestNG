@@ -1,9 +1,9 @@
 package com.rishi.pw.ui;
 
 import com.microsoft.playwright.Locator;
-import com.rishi.pw.utils.DriverSetup;
+import com.rishi.pw.utils.AppContext;
 
-public final class HomepageLocators extends DriverSetup {
+public final class HomepageLocators extends AppContext {
 
 	public final Locator loginBtnImg = getPage().getByAltText("Login").first();
 	public final Locator loginBtn = getPage().locator("[class*='lr29Nk']");

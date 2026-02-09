@@ -2,7 +2,7 @@ package com.rishi.pw.pages;
 
 import com.microsoft.playwright.Page;
 import com.rishi.pw.ui.LoginpageLocators;
-import com.rishi.pw.utils.DriverSetup;
+import com.rishi.pw.utils.AppContext;
 import com.rishi.pw.utils.HelperMethods;
 
 public class Loginpage {
@@ -13,7 +13,7 @@ public class Loginpage {
 	public void loginByMobileNumber(String mobileNumber) {
 		helperMethods.waitForElementToBeVisible(loginpageLocators.mobileNumber);
 		helperMethods.clickOnElement(loginpageLocators.mobileNumber);
-		helperMethods.waitTillPageLoad(DriverSetup.getPage(), "page");
+		helperMethods.waitTillPageLoad(AppContext.getPage(), "page");
 		helperMethods.enterText(loginpageLocators.mobileNumber, mobileNumber);
 		helperMethods.clickOnElement(loginpageLocators.continueBtn);
 	}

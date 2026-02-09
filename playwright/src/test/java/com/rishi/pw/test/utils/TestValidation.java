@@ -9,6 +9,7 @@ import com.microsoft.playwright.Page;
 import com.rishi.pw.ui.HomepageLocators;
 import com.rishi.pw.ui.LoginpageLocators;
 import com.rishi.pw.ui.ProductResultspageLocators;
+import com.rishi.pw.utils.AppContext;
 import com.rishi.pw.utils.DriverSetup;
 import com.rishi.pw.utils.HelperMethods;
 
@@ -35,7 +36,7 @@ public class TestValidation extends DriverSetup {
 	}
 
 	public void validateFlipkartPlusPage(String url) {
-		helperMethods.waitTillPageLoad(getPage(), "page");
+		helperMethods.waitTillPageLoad(AppContext.getPage(), "page");
 		String pageUrl = helperMethods.getPageUrl();
 		Assert.assertEquals(pageUrl, url);
 	}

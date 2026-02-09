@@ -15,7 +15,7 @@ import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.SelectOption;
 import com.microsoft.playwright.options.WaitForSelectorState;
 
-public class HelperMethods extends DriverSetup {
+public class HelperMethods extends AppContext {
 
 	public void clickOnElement(Locator locator) {
 		try {
@@ -227,7 +227,7 @@ public class HelperMethods extends DriverSetup {
 	public String getPageTitle(Page page) {
 		try {
 			waitTillPageLoad(page, "page");
-			return getPage().title();
+			return page.title();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

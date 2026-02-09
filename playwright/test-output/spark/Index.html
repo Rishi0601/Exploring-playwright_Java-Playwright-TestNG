@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb 8, 2026 11:21:32 pm</span></a>
+<a href="#"><span class="badge badge-primary">Feb 9, 2026 07:23:59 pm</span></a>
 </li>
 </ul>
 </div>
@@ -45,11 +45,6 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
-</a>
-</li>
-<li class="nav-item dropdown" onclick="toggleView('exception-view')">
-<a id="nav-exception" class="dropdown-toggle" href="#">
-<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -72,7 +67,6 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
-<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -80,25 +74,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="fail" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Login page features for Flipkart Application</p>
+            <p class="name">Homepage features for Flipkart Application</p>
             <p class="text-sm">
-              <span>11:21:32 pm</span> / <span>00:00:44:223</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>7:23:59 pm</span> / <span>00:00:35:407</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Login page features for Flipkart Application</h5>
-<span class='badge badge-success'>02.08.2026 11:21:32 pm</span>
-<span class='badge badge-danger'>02.08.2026 11:22:17 pm</span>
-<span class='badge badge-default'>00:00:44:223</span>
+<h5 class="test-status text-pass">Homepage features for Flipkart Application</h5>
+<span class='badge badge-success'>02.09.2026 7:23:59 pm</span>
+<span class='badge badge-danger'>02.09.2026 7:24:35 pm</span>
+<span class='badge badge-default'>00:00:35:407</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -111,133 +105,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Login page hyperlink redirection validation</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Login page hyperlink redirection validation</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given the user initialises test dependencies and launches the Flipkart application</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user click on the Login button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then user clicks on the "terms" hyperlink</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>Then user finds the page title contains "terms"</span>
-      <div>
-        <textarea disabled class="code-block">java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at org.testng.Assert.assertTrue(Assert.java:67)
-	at com.rishi.pw.test.utils.TestValidation.validateLoginHyperlinks(TestValidation.java:29)
-	at com.rishi.pw.test.stepdefinitions.LoginDefinition.user_finds_the_page_title_contains(LoginDefinition.java:50)
-	at ✽.user finds the page title contains "terms"(file:///C:/Users/rishi/eclipse-workspace/Exploring-playwright_Java-Playwright-TestNG/playwright/src/test/resources/features/loginpage.feature:15)
-</textarea>
-      
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>com.rishi.pw.test.stepdefinitions.Hooks.cleanUpResources(io.cucumber.java.Scenario)</span>
-      <div>Failure Screenshots
-          <div class="row mb-3"><div class="col-md-3">
-    
-
-<img data-featherlight='test-output/embedded3.png' src="test-output/embedded3.png">
-  
-    
-
-    </div></div>
-</div>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="13"><span class="badge log fail-bg mr-2">Fail</span>Login page hyperlink redirection validation</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given the user initialises test dependencies and launches the Flipkart application</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user click on the Login button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then user clicks on the "privacy" hyperlink</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>Then user finds the page title contains "privacy"</span>
-      <div>
-        <textarea disabled class="code-block">java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at org.testng.Assert.assertTrue(Assert.java:67)
-	at com.rishi.pw.test.utils.TestValidation.validateLoginHyperlinks(TestValidation.java:29)
-	at com.rishi.pw.test.stepdefinitions.LoginDefinition.user_finds_the_page_title_contains(LoginDefinition.java:50)
-	at ✽.user finds the page title contains "privacy"(file:///C:/Users/rishi/eclipse-workspace/Exploring-playwright_Java-Playwright-TestNG/playwright/src/test/resources/features/loginpage.feature:15)
-</textarea>
-      
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>com.rishi.pw.test.stepdefinitions.Hooks.cleanUpResources(io.cucumber.java.Scenario)</span>
-      <div>Failure Screenshots
-          <div class="row mb-3"><div class="col-md-3">
-    
-
-<img data-featherlight='test-output/embedded2.png' src="test-output/embedded2.png">
-  
-    
-
-    </div></div>
-</div>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="4"><span class="badge log pass-bg mr-2">Pass</span>Invalid login validation</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Footer link validation</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -250,23 +118,13 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.LoginDefinition.user_click_on_the_login_button()">
-                <span>When user click on the Login button</span>
+              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.HomeDefinition.the_user_scrolls_to_the_footer_of_the_application_home_page()">
+                <span>When the user scrolls to the footer of the application home page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.LoginDefinition.user_enters_invalid_mobile_number(java.lang.String)">
-                <span>Then user enters invalid mobile number "123456789"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.LoginDefinition.user_should_see_an_error_message(java.lang.String)">
-                <span>Then user should see an error message "Please enter valid Email ID/Mobile number"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.LoginDefinition.user_clicks_on_the_flipkart_plus_hyperlink_and_gets_redirected_to_website(java.lang.String)">
-                <span>Then user clicks on the Flipkart plus hyperlink and gets redirected to "https://www.flipkart.com/plus" website</span>
+              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.HomeDefinition.the_user_can_find_footer_links(java.lang.String)">
+                <span>Then the user can find "21" footer links</span>
       <div>
       </div>
               </div>
@@ -276,7 +134,7 @@
           <div class="row mb-3"><div class="col-md-3">
     
 
-<img data-featherlight='test-output/embedded4.png' src="test-output/embedded4.png">
+<img data-featherlight='test-output/embedded1.png' src="test-output/embedded1.png">
   
     
 
@@ -288,41 +146,10 @@
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="5"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Homepage features for Flipkart Application</p>
-            <p class="text-sm">
-              <span>11:21:32 pm</span> / <span>00:00:50:012</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Homepage features for Flipkart Application</h5>
-<span class='badge badge-success'>02.08.2026 11:21:32 pm</span>
-<span class='badge badge-danger'>02.08.2026 11:22:22 pm</span>
-<span class='badge badge-default'>00:00:50:012</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="6"><span class="badge log pass-bg mr-2">Pass</span>Search functionality validation</div>
+        <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Search functionality validation</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -332,7 +159,7 @@
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="7"><span class="badge log pass-bg mr-2">Pass</span>Search functionality validation</div>
+                  <div class="node" id="4"><span class="badge log pass-bg mr-2">Pass</span>Search functionality validation</div>
                     <div class="status-avatar float-right">
                       <i class="fa fa-paperclip"></i>
                     </div>
@@ -345,12 +172,12 @@
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>When the user searches "laptop under 50000" in the search box and hits the search button</span>
+                    <span>When the user searches "tv under 30000" in the search box and hits the search button</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then the user is able relevant results "laptop under 50000"</span>
+                    <span>Then the user is able relevant results "tv under 30000"</span>
       <div>
       </div>
                   </div>
@@ -416,7 +243,7 @@
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="12"><span class="badge log pass-bg mr-2">Pass</span>Search functionality validation</div>
+                  <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>Search functionality validation</div>
                     <div class="status-avatar float-right">
                       <i class="fa fa-paperclip"></i>
                     </div>
@@ -429,12 +256,12 @@
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>When the user searches "tv under 30000" in the search box and hits the search button</span>
+                    <span>When the user searches "laptop under 50000" in the search box and hits the search button</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then the user is able relevant results "tv under 30000"</span>
+                    <span>Then the user is able relevant results "laptop under 50000"</span>
       <div>
       </div>
                   </div>
@@ -460,51 +287,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="9"><span class="badge log pass-bg mr-2">Pass</span>Footer link validation</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.Hooks.the_user_initialises_test_dependencies_and_launches_the_flipkart_application()">
-                <span>Given the user initialises test dependencies and launches the Flipkart application</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.HomeDefinition.the_user_scrolls_to_the_footer_of_the_application_home_page()">
-                <span>When the user scrolls to the footer of the application home page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.HomeDefinition.the_user_can_find_footer_links(java.lang.String)">
-                <span>Then the user can find "21" footer links</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER">
-                <span>com.rishi.pw.test.stepdefinitions.Hooks.cleanUpResources(io.cucumber.java.Scenario)</span>
-      <div>Pass Screenshots
-          <div class="row mb-3"><div class="col-md-3">
-    
-
-<img data-featherlight='test-output/embedded5.png' src="test-output/embedded5.png">
-  
-    
-
-    </div></div>
-</div>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>Social hyperlinks validation</div>
+        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>Social hyperlinks validation</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -533,7 +316,198 @@
           <div class="row mb-3"><div class="col-md-3">
     
 
-<img data-featherlight='test-output/embedded1.png' src="test-output/embedded1.png">
+<img data-featherlight='test-output/embedded2.png' src="test-output/embedded2.png">
+  
+    
+
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Login page features for Flipkart Application</p>
+            <p class="text-sm">
+              <span>7:23:59 pm</span> / <span>00:00:32:397</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Login page features for Flipkart Application</h5>
+<span class='badge badge-success'>02.09.2026 7:23:59 pm</span>
+<span class='badge badge-danger'>02.09.2026 7:24:32 pm</span>
+<span class='badge badge-default'>00:00:32:397</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="6"><span class="badge log pass-bg mr-2">Pass</span>Login page hyperlink redirection validation</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="7"><span class="badge log pass-bg mr-2">Pass</span>Login page hyperlink redirection validation</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user initialises test dependencies and launches the Flipkart application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on the Login button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user clicks on the "privacy" hyperlink</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user finds the page title contains "privacy"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.rishi.pw.test.stepdefinitions.Hooks.cleanUpResources(io.cucumber.java.Scenario)</span>
+      <div>Pass Screenshots
+          <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='test-output/embedded3.png' src="test-output/embedded3.png">
+  
+    
+
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>Login page hyperlink redirection validation</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user initialises test dependencies and launches the Flipkart application</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on the Login button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user clicks on the "terms" hyperlink</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user finds the page title contains "terms"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.rishi.pw.test.stepdefinitions.Hooks.cleanUpResources(io.cucumber.java.Scenario)</span>
+      <div>Pass Screenshots
+          <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='test-output/embedded5.png' src="test-output/embedded5.png">
+  
+    
+
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="16"><span class="badge log pass-bg mr-2">Pass</span>Invalid login validation</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.Hooks.the_user_initialises_test_dependencies_and_launches_the_flipkart_application()">
+                <span>Given the user initialises test dependencies and launches the Flipkart application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.LoginDefinition.user_click_on_the_login_button()">
+                <span>When user click on the Login button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.LoginDefinition.user_enters_invalid_mobile_number(java.lang.String)">
+                <span>Then user enters invalid mobile number "123456789"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.LoginDefinition.user_should_see_an_error_message(java.lang.String)">
+                <span>Then user should see an error message "Please enter valid Email ID/Mobile number"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.rishi.pw.test.stepdefinitions.LoginDefinition.user_clicks_on_the_flipkart_plus_hyperlink_and_gets_redirected_to_website(java.lang.String)">
+                <span>Then user clicks on the Flipkart plus hyperlink and gets redirected to "https://www.flipkart.com/plus" website</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>com.rishi.pw.test.stepdefinitions.Hooks.cleanUpResources(io.cucumber.java.Scenario)</span>
+      <div>Pass Screenshots
+          <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='test-output/embedded4.png' src="test-output/embedded4.png">
   
     
 
@@ -557,92 +531,30 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view exception-view attributes-view">
-<div class="test-list">
-<div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
-</div>
-<div class="test-list-wrapper scrollable">
-<ul class="test-list-item">
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>2</span>
-</span>
-<p class="name">java.lang.AssertionError</p>
-<p class="duration text-sm">2 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>java.lang.AssertionError</h4>
-<span status="fail" class='badge log badge-danger'>2 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>23:22:07 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='50'>Then user finds the page title contains "privacy"</a>
-<div class="">
-<span class="badge badge-default">Login page features for Flipkart Application.Login page hyperlink redirection validation.Then user finds the page title contains "privacy"</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>23:22:09 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='55'>Then user finds the page title contains "terms"</a>
-<div class="">
-<span class="badge badge-default">Login page features for Flipkart Application.Login page hyperlink redirection validation.Then user finds the page title contains "terms"</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="test-content scrollable">
-<div class="test-content-detail">
-<div class="detail-body"></div>
-</div>
-</div>
-</div><div class="container-fluid p-4 view dashboard-view">
+<div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb 8, 2026 11:21:32 pm</h3>
+<h3>Feb 9, 2026 07:23:59 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb 8, 2026 11:22:22 pm</h3>
+<h3>Feb 9, 2026 07:24:35 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>2</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 </div>
@@ -658,12 +570,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='50%'>
-<b>1</b> features passed
+<div><small data-tooltip='100%'>
+<b>2</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='50%'><b>1</b> features failed,
+<small data-tooltip='0%'><b>0</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -681,9 +593,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='75%'><b>6</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>8</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='25%'><b>2</b> scenarios failed,
+<small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -701,9 +613,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='94%'><b>34</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>36</b> steps passed</small></div>
 <div>
-<small data-tooltip='5%'><b>2</b> steps failed,
+<small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -720,7 +632,7 @@
 </div></div>
 <script>
 var timeline = {
-"Login page features for Flipkart Application":44.223,"Homepage features for Flipkart Application":50.012
+"Homepage features for Flipkart Application":35.407,"Login page features for Flipkart Application":32.397
 };
 </script>
 <div class="row">
@@ -743,19 +655,19 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 1,
+passParent: 2,
+failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 6,
-failChild: 2,
+passChild: 8,
+failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 34,
-failGrandChild: 2,
+passGrandChild: 36,
+failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,

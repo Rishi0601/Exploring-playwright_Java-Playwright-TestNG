@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 import com.microsoft.playwright.Page;
 
-public class ScreenshotUtil extends DriverSetup {
+public class ScreenshotUtil {
 
 	public static Path getScreenshotPath(String imageName) {
 		return Paths.get(System.getProperty("user.dir") + "/target/screenshots/" + imageName + "_"
@@ -16,7 +16,7 @@ public class ScreenshotUtil extends DriverSetup {
 
 	public static byte[] takeScreenShots(String imgName) {
 		Path screenshotPath = getScreenshotPath(imgName);
-		byte[] array = getPage().screenshot(new Page.ScreenshotOptions().setFullPage(false).setPath(screenshotPath));
+		byte[] array = AppContext.getPage().screenshot(new Page.ScreenshotOptions().setFullPage(false).setPath(screenshotPath));
 		try {
 			Files.write(Paths.get(screenshotPath.toUri()), array);
 		} catch (IOException e) {

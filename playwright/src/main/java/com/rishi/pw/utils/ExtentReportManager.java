@@ -1,23 +1,13 @@
 package com.rishi.pw.utils;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class ExtentReportManager extends DriverSetup {
+public class ExtentReportManager extends AppContext {
 
 	public static ExtentReports extentReports;
-	private static final ThreadLocal<ExtentTest> testThreadlocal = ThreadLocal.withInitial(() -> null);
-
-	public static void setTest(ExtentTest test) {
-		testThreadlocal.set(test);
-	}
-
-	public static ExtentTest getTest() {
-		return testThreadlocal.get();
-	}
 
 	public static ExtentReports initReport() {
 		ExtentSparkReporter extentSparkReporter = new ExtentSparkReporter(
