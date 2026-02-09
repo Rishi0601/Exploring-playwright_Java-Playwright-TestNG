@@ -6,8 +6,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import org.testng.Assert;
-
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Locator.WaitForOptions;
 import com.microsoft.playwright.Page;
@@ -241,13 +239,6 @@ public class HelperMethods extends AppContext {
 			e.printStackTrace();
 			return null;
 		}
-	}
-
-	public void exceptionHandler(Exception e) {
-		e.printStackTrace();
-		LoggerHandler.error(e.getMessage());
-		Assert.fail();
-
 	}
 
 	public static String getTimestamp(String format) {
