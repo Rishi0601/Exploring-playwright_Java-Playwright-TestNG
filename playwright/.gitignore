@@ -7,6 +7,7 @@ playwright/videos
 playwright/reports
 playwright/screenshots
 playwright/tracer
+playwright/target
 
 # Log file
 *.log
