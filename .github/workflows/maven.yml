@@ -20,13 +20,39 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 25
-      uses: actions/setup-java@v5.2.0
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup node.js
+      uses: actions/setup-node@v4
       with:
-        java-version: '25'
+        node-version: '20'
+
+    - name: Setup maven
+      uses: s4u/setup-maven-action@v1.7.0
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        maven-version: 3.9.9
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
         distribution: 'temurin'
         cache: maven
+
+    - name: Cache maven dependencies
+      uses: actions/cache@v3
+      with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven
+
+    - name: Install playwright dependencies
+      run: npx playwright install-deps
+        
     - name: Run tests
       run: |
         cd playwright
