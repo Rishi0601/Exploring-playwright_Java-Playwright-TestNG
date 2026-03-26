@@ -31,6 +31,8 @@ jobs:
     - name: Setup maven
       uses: s4u/setup-maven-action@v1.7.0
       with:
+        java-version: '17'
+        distribution: 'temurin'
         maven-version: 3.9.9
     
     - name: Set up JDK 17
